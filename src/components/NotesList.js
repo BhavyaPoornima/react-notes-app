@@ -14,6 +14,8 @@ const NotesList = ({
 					text={note.text}
 					date={note.date}
 					handleDeleteNote={handleDeleteNote}
+					// Only show the delete button if the note belongs to the current user
+					showDeleteButton={note.userId === localStorage.getItem('userId')}
 				/>
 			))}
 			<AddNote handleAddNote={handleAddNote} />
